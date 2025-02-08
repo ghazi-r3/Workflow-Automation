@@ -1,0 +1,28 @@
+name: Daily Commit Automation
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs once per day at midnight (adjust this as per your need)
+  workflow_dispatch:
+
+jobs:
+  daily_commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Git user with email 23f1002587@ds.study.iitm.ac.in
+        run: |
+          git config --global user.email "23f1002587@ds.study.iitm.ac.in"
+          git config --global user.name "DevSync Automation"
+
+      - name: Make daily commit with email 23f1002587@ds.study.iitm.ac.in
+        run: |
+          echo "Daily commit update: $(date)" >> daily_commit_log.txt
+          git add daily_commit_log.txt
+          git commit -m "Automated daily commit by DevSync Automation"
+          git push
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
