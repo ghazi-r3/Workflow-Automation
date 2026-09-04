@@ -13,16 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Git user with email 23f1002587@ds.study.iitm.ac.in
+      - name: Set up Git user with email rafrafrezakne@gmail.com
         run: |
-          git config --global user.email "23f1002587@ds.study.iitm.ac.in"
-          git config --global user.name "DevSync Automation"
+          git config --global user.email "rafrafrezakne@gmail.com"
+          git config --global user.name "Ghazi-R3 Automation"
 
-      - name: Make daily commit with email 23f1002587@ds.study.iitm.ac.in
+      - name: Make daily commit with email rafrafrezakne@gmail.com
         run: |
           echo "Daily commit update: $(date)" >> daily_commit_log.txt
           git add daily_commit_log.txt
-          git commit -m "Automated daily commit by DevSync Automation"
+          git commit -m "Automated daily commit by Ghazi-R3 Automation"
           git push
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
