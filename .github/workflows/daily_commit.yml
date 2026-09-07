@@ -22,7 +22,7 @@ jobs:
         run: |
           echo "Daily commit update: $(date)" >> daily_commit_log.txt
           git add daily_commit_log.txt
-          git commit -m "Automated daily commit by Ghazi-R3 Automation"
+          git commit -m "Automation by Ghazi-R3 (Rafraf Reza)"
           git push
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
