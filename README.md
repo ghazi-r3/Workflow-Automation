@@ -8,6 +8,7 @@
   <br />
   <h2>⚙️ Workflow Automation Engine</h2>
   <p><b>Serverless CI/CD Pipeline & Cron-Based Orchestration</b></p>
+  <p><i>(Originally developed for the Tools in Data Science course at IIT Madras)</i></p>
 </div>
 
 <br />
